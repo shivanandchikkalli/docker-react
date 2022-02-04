@@ -1,5 +1,5 @@
 # This builder phase creates the artifacts for the application
-FROM node:alpine as builder
+FROM node:16-alpine as builder
 
 WORKDIR '/app'
 COPY package.json .

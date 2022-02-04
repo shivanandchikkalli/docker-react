@@ -5,11 +5,11 @@ services:
 
 
 before_install:
-  - docker build -t github-frontend -f Dockerfile .
+  - docker build -t shivanandchikkalli/docker-react -f Dockerfile.dev .
 
 
 script:
-  - docker run -e CI=true github-frontend npm run test
+  - docker run -e CI=true shivanandchikkalli/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
