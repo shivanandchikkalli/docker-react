@@ -5,21 +5,9 @@ services:
 
 
 before_install:
-  - docker build -t github-frontend -f Dockerfile .
+  - docker build -t github-frontend -f Dockerfile.dev .
 
 
-#script:
-#  - docker run github-frontend npm run test -- --coverage
+script:
+  - docker run -e CI=true github-frontend npm run test
 
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "docker"
-  env: "Docker-env"
-  bucker_name: "elasticbeanstalk-us-east-1-608972471936"
-  bucker_path: "docker"
-  edge: true
-  on:
-    branch: main
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
