@@ -5,7 +5,7 @@ services:
 
 
 before_install:
-  - docker build -t shivanandchikkalli/docker-react -f Dockerfile.dev .
+  - docker build -t shivanandchikkalli/docker-react .
 
 
 script:
