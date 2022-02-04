@@ -5,7 +5,7 @@ services:
 
 
 before_install:
-  - docker build -t github-frontend -f Dockerfile.dev .
+  - docker build -t github-frontend -f Dockerfile .
 
 
 script:
